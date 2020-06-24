@@ -1,0 +1,15 @@
+{
+    "name": "ytdl-playlist",
+    "version": "0.0.1",
+    "description": "youtube playlist mp3 download script",
+    "main": "index.js",
+    "author": "anticore",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "follow-redirects": "^1.12.1"
+    },
+    "scripts": {
+        "start": "node index.js"
+    }
+}
