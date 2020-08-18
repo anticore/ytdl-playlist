@@ -29,15 +29,15 @@ function downloadPlaylist() {
         `${path.resolve(
             "bin",
             "youtube-dl.exe"
-        )} --extract-audio --audio-format mp3 -o "${saveLocation}\\%(title)s.%(ext)s" ${playlistURL}`,
+        )} --extract-audio --audio-format mp3 -o "${saveLocation}\\${new Date().getTime()}\\%(title)s.%(ext)s" ${playlistURL}`,
         function (error, stdout, stderr) {
             if (error) {
                 console.log(error.stack);
                 console.log("Error code: " + error.code);
                 console.log("Signal received: " + error.signal);
             }
-            console.log("Child Process STDOUT: " + stdout);
-            console.log("Child Process STDERR: " + stderr);
+            console.log("\nSTDOUT: " + stdout);
+            if (stderr) console.log("Child Process STDERR: " + stderr);
         }
     );
 }
